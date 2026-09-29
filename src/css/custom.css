@@ -55,3 +55,21 @@
 [data-theme='dark'] .navbar .github-icon svg {
   fill: #fff;
 }
+
+/* HPC 服务状态嵌入卡片(embed=1 网格视图;上游视图为组件内部状态,URL 无法控制)。
+   高度 600px ≈ 工具栏 + 两行服务卡片,超出部分滚动隐藏 */
+.hpc-embed iframe {
+  display: block;
+  width: 100%;
+  height: 540px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-card-border-radius, 8px);
+  background: #f3f7fc;
+}
+
+/* 暗色模式:跨域 iframe 无法改其内部主题,用反色让白底变黑底,色相转回保持原配色 */
+[data-theme='dark'] .hpc-embed iframe {
+  filter: invert(1) hue-rotate(180deg);
+  background: #020617;
+  border-color: var(--ifm-color-emphasis-300);
+}
