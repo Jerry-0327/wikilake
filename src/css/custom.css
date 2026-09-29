@@ -30,6 +30,14 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+/* 首页 hero(暗色):用品牌深蓝色块 + 橙色文字,与亮色模式布局统一。
+   注意:Infima 把 hero 变量直接定义在 .hero--primary 元素上,从
+   [data-theme] 继承会被元素自身定义覆盖,因此必须用更高特异性直接覆盖 */
+[data-theme='dark'] .hero--primary {
+  --ifm-hero-background-color: #123a5e;
+  --ifm-hero-text-color: #f18d00;
+}
+
 /* 分割线：文档正文（分页导航）与评论区之间 */
 .doc-comments-divider {
   margin: 2.5rem 0 1.5rem;
