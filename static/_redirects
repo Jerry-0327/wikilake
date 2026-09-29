@@ -1,2 +1,0 @@
-# Netlify 代理:同源转发 HPC 状态查询 API(供 HpcStatus 组件使用)
-/hpc-api/*  https://hpc.westlake.edu.cn/api/:splat  200

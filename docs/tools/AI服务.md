@@ -14,6 +14,10 @@ tags: [工具]
 
 实时查看计算中心大模型服务的可用性与延迟：
 
-import HpcStatus from '@site/src/components/HpcStatus';
-
-<HpcStatus />
+<div className="hpc-embed">
+  <iframe
+    src="https://hpc.westlake.edu.cn/p/westlake?embed=1"
+    title="westlake 服务状态"
+    loading="lazy"
+  />
+</div>
