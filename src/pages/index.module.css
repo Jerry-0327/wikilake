@@ -21,3 +21,48 @@
   align-items: center;
   justify-content: center;
 }
+
+.categories {
+  padding: 2.5rem 0 3rem;
+}
+
+/* 每个分类卡片:边框卡片，悬停时主色描边并轻微上浮(VitePress features 风格) */
+.categoryCol {
+  display: flex;
+  margin-bottom: 1.25rem;
+}
+
+.categoryCard {
+  flex: 1;
+  color: inherit;
+  transition: border-color var(--ifm-transition-fast) var(--ifm-transition-timing-default),
+    box-shadow var(--ifm-transition-fast) var(--ifm-transition-timing-default),
+    transform var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.categoryCard:hover {
+  color: inherit;
+  text-decoration: none;
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.categoryEmoji {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.categoryTitle {
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.categoryDescription {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 0;
+}
