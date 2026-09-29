@@ -14,6 +14,10 @@ tags: [工具]
 
 实时查看计算中心大模型服务的可用性与延迟：
 
+:::note[仅校园内网可访问]
+状态数据接口仅对内网开放，校外访问下方状态卡无法加载。
+:::
+
 <div className="hpc-embed">
   <iframe
     src="https://hpc.westlake.edu.cn/p/westlake?embed=1"
