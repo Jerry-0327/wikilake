@@ -1,0 +1,155 @@
+.box {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-card-border-radius, 8px);
+  background: var(--ifm-background-surface-color);
+  padding: 0.75rem 1rem;
+  overflow: hidden;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-100);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.service {
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+/* 24 小时可用率点阵:每格 1 小时,颜色按可用率 */
+.sparkline {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.cell {
+  width: 7px;
+  height: 16px;
+  border-radius: 2px;
+}
+
+.avail {
+  width: 3.2rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.latency {
+  width: 5.5rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.88rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* 状态徽章(可用/降级/不可用) */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid;
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.errorLine {
+  color: var(--ifm-color-danger);
+  margin-bottom: 0.35rem;
+}
+
+.hintLine {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.asOf {
+  margin: 0.6rem 0 0.15rem;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.footerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.6rem;
+}
+
+.refreshBtn {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: transparent;
+  color: var(--ifm-color-emphasis-700);
+  border-radius: 6px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.refreshBtn:hover:not(:disabled) {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.refreshBtn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+@media screen and (max-width: 768px) {
+  .row {
+    flex-wrap: wrap;
+    gap: 0.4rem 0.75rem;
+  }
+
+  .sparkline {
+    order: 3;
+    width: 100%;
+  }
+
+  .latency,
+  .avail {
+    width: auto;
+    text-align: left;
+  }
+}
