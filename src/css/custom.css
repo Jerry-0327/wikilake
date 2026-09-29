@@ -34,3 +34,15 @@
   margin: 2.5rem 0 1.5rem;
   background-color: var(--ifm-color-emphasis-200);
 }
+
+/* 导航栏右侧的 GitHub 图标链接(统一黑白:亮色模式黑、暗色模式白,悬停不变色) */
+.navbar .github-icon svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: #000;
+}
+
+[data-theme='dark'] .navbar .github-icon svg {
+  fill: #fff;
+}
