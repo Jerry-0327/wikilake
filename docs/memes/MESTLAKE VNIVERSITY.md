@@ -8,7 +8,7 @@ tags: [梗]
 
 群中以25及26届学生为主，也有少量23、24届学生以及博士生(点名[胡磊](../people/students/others/胡磊.md))
 
-和网群并列西湖二大学生吹水群，比网群更加开放自由<span class="spoiler" tabindex="0">指群里发电消息更多</span>
+和[网群](./网群.md)并列西湖二大学生吹水群，比网群更加开放自由<span class="spoiler" tabindex="0">指群里发电消息更多</span>
 
 <span class="spoiler" tabindex="0">精华消息和群相册更是群英荟萃</span>
 
