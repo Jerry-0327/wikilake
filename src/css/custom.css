@@ -73,3 +73,40 @@
   background: #020617;
   border-color: var(--ifm-color-emphasis-300);
 }
+
+/* ===== 黑幕：黑底同色遮住文字，悬停/聚焦后保留黑底、文字反色显现 ===== */
+.spoiler {
+  background: var(--ifm-font-color-base);
+  color: var(--ifm-font-color-base);
+  border-radius: 4px;
+  padding: 0.08em 0.32em;
+  cursor: help;
+  transition: color 0.12s ease-in;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* 遮罩里若有链接，也要跟着藏住 */
+.spoiler a,
+.spoiler a:visited {
+  color: inherit;
+}
+
+/* 揭示：底色不变，文字换成页面底色 = 反色 */
+.spoiler:hover,
+.spoiler:focus,
+.spoiler:active {
+  color: var(--ifm-background-color);
+}
+
+/* 遮罩里若有图片，一并压黑 */
+.spoiler img {
+  filter: brightness(0);
+  transition: filter 0.12s ease-in;
+}
+
+.spoiler:hover img,
+.spoiler:focus img {
+  filter: brightness(1);
+}
