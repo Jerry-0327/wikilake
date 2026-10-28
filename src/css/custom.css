@@ -74,35 +74,50 @@
   border-color: var(--ifm-color-emphasis-300);
 }
 
-/* 暗色模式：黑块换成浅块，揭示色换成页面底色，保证对比度 */
-[data-theme='dark'] .spoiler {
-  --spoiler-mask: #e6e6e6;
-  --spoiler-reveal: #1b1b1d;
+/* ===== 黑幕（萌百同款，全主题统一） =====
+   与主题无关：浅色 / 暗色 / 跟随系统三种模式都表现为黑底遮字，
+   悬停或点击（focus）后黑底不变、文字反色（白色）显现。 */
+.spoiler {
+  background-color: #000 !important;
+  color: #000 !important;
+  border-radius: 4px;
+  padding: 0.08em 0.32em;
+  cursor: help;
+  transition: color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
-/* 遮罩内的链接跟随遮罩色，避免深色链接从黑块里透出来 */
+/* 遮罩内的链接同样藏起 */
 .spoiler a,
 .spoiler a:visited {
   color: inherit !important;
 }
 
-/* 揭示：背景色不参与变化，只把文字换成对比色，所以黑块始终保留 */
+/* 揭示：背景保持纯黑，文字反色 */
 .spoiler:hover,
 .spoiler:hover *,
 .spoiler:focus,
 .spoiler:focus *,
 .spoiler:active,
 .spoiler:active * {
-  color: var(--spoiler-reveal) !important;
+  color: #fff !important;
 }
 
-/* 遮罩内若有图片，一并压黑/还原 */
+/* 遮罩内的图片一并压黑，揭示时还原 */
 .spoiler img {
   filter: brightness(0) !important;
-  transition: filter 0.12s ease-in;
+  transition: filter 0.15s ease;
 }
-
 .spoiler:hover img,
 .spoiler:focus img {
   filter: none !important;
+}
+
+/* 暗色模式下只画一圈细描边，方便在黑底页面上看清黑块边界；
+   不改变遮罩与揭示的颜色，不想要可整段删除。 */
+[data-theme='dark'] .spoiler {
+  outline: 1px solid rgba(255, 255, 255, 0.22);
+  outline-offset: -1px;
 }
