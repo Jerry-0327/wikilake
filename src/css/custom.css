@@ -74,37 +74,19 @@
   border-color: var(--ifm-color-emphasis-300);
 }
 
-/* ===== 黑幕（自适应浅色/暗色） =====
-   思路：遮罩色 = 正常文字色，揭示色 = 页面底色，两者都取主题变量，
-   只有变色时才揭示，背景始终不变，所以黑块（暗色下为浅块）一直保留。 */
-.spoiler {
-  --spoiler-mask: var(--ifm-font-color-base, #1c1e21);
-  --spoiler-reveal: var(--ifm-background-color, #fff);
-
-  background-color: var(--spoiler-mask) !important;
-  color: var(--spoiler-mask) !important;
-  border-radius: 4px;
-  padding: 0.08em 0.32em;
-  cursor: help;
-  transition: color 0.12s ease-in;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-
-/* 暗色模式：遮罩改成浅色块，揭示时用深色字，保证对比度 */
+/* 暗色模式：黑块换成浅块，揭示色换成页面底色，保证对比度 */
 [data-theme='dark'] .spoiler {
-  --spoiler-mask: var(--ifm-font-color-base, #e3e3e3);
-  --spoiler-reveal: var(--ifm-background-color, #1b1b1d);
+  --spoiler-mask: #e6e6e6;
+  --spoiler-reveal: #1b1b1d;
 }
 
-/* 遮罩内的链接跟随遮罩色 */
+/* 遮罩内的链接跟随遮罩色，避免深色链接从黑块里透出来 */
 .spoiler a,
 .spoiler a:visited {
   color: inherit !important;
 }
 
-/* 揭示：背景不动，文字换成对比色 */
+/* 揭示：背景色不参与变化，只把文字换成对比色，所以黑块始终保留 */
 .spoiler:hover,
 .spoiler:hover *,
 .spoiler:focus,
@@ -114,7 +96,7 @@
   color: var(--spoiler-reveal) !important;
 }
 
-/* 遮罩内的图片一并压黑/提亮 */
+/* 遮罩内若有图片，一并压黑/还原 */
 .spoiler img {
   filter: brightness(0) !important;
   transition: filter 0.12s ease-in;
@@ -122,5 +104,5 @@
 
 .spoiler:hover img,
 .spoiler:focus img {
-  filter: brightness(none) !important;
+  filter: none !important;
 }
